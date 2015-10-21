@@ -1,0 +1,79 @@
+Public Class Form1
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        Me.Close()
+    End Sub
+    Private Sub BtnSbros_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnSbros.Click
+        lblOper.Text = ""
+        txt1.Text = ""
+        txt2.Text = ""
+        txtResult.Text = ""
+    End Sub
+
+    Private Sub BtnSum_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnSum.Click
+        Dim i1 As Single, i2 As Single, i3 As Single
+        lblOper.Text = "Сложение"
+        i1 = Val(txt1.Text)
+        i2 = Val(txt2.Text)
+        i3 = i1 + i2
+        If txt1.Text = "" Or txt2.Text = "" Then
+            LblOsh.Text = "Ошибка. Введите число."
+            txtResult.Text = ""
+        Else
+            txtResult.Text = Str(i3)
+            LblOsh.Text = ""
+        End If
+    End Sub
+
+
+
+    Private Sub BtnMin_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnMin.Click
+        Dim i1 As Single, i2 As Single, i3 As Single
+        lblOper.Text = "Вычитание"
+        i1 = Val(txt1.Text)
+        i2 = Val(txt2.Text)
+        i3 = i1 - i2
+        If txt1.Text = "" Or txt2.Text = "" Then
+            txtResult.Text = ""
+            LblOsh.Text = "Ошибка. Введите число."
+        Else
+            txtResult.Text = Str(i3)
+            LblOsh.Text = ""
+        End If
+    End Sub
+
+    Private Sub BtnUmnog_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnUmnog.Click
+        Dim i1 As Single, i2 As Single, i3 As Single
+        lblOper.Text = "Умножение"
+        i1 = Val(txt1.Text)
+        i2 = Val(txt2.Text)
+        i3 = i1 * i2
+        If txt1.Text = "" Or txt2.Text = "" Then
+            LblOsh.Text = "Ошибка. Введите число."
+            txtResult.Text = ""
+        Else
+            txtResult.Text = Str(i3)
+            LblOsh.Text = ""
+        End If
+    End Sub
+
+    Private Sub BtnDelem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnDelem.Click
+        Dim i1 As Single, i2 As Single, i3 As Single
+        lblOper.Text = "Деление"
+        i1 = Val(txt1.Text)
+        i2 = Val(txt2.Text)
+        i3 = i1 / i2
+        If txt1.Text = "" Or txt2.Text = "" Then
+            LblOsh.Text = "Ошибка. Введите число."
+            txtResult.Text = ""
+        ElseIf i2 = "0" Then
+            LblOsh.Text = "На ноль делить нельзя."
+            txtResult.Text = ""
+        Else
+            txtResult.Text = Str(i3)
+            LblOsh.Text = ""
+        End If
+    End Sub
+
+
+End Class
